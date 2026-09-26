@@ -24,7 +24,7 @@
 - Offline original Smart Composer
 - Optional AI composer through a server-side API key
 - Selected instruments become separate parts
-- Synthesized browser audition; final realistic sound is best produced in Ableton with licensed instruments/samples
+- Studio Warm multi-sampled browser audition; Ableton with licensed instruments/samples remains available for final production
 
 ## Security
 - Password login
@@ -33,3 +33,25 @@
 - CSRF tokens for writes
 - Admin/user roles
 - Storage denied from direct web access by Apache `.htaccess`
+
+## MIDI Studio v1.1
+
+- Live audible MIDI monitoring from M-Audio Keystation 88 II and other Web MIDI controllers.
+- Instrument monitor presets: piano, accordion, guitar, violin, clarinet, alto sax and tenor sax.
+- Velocity curves, volume, input channel, transpose and octave controls.
+- Sustain pedal and pitch bend.
+- MIDI Thru to a selected output for external sound modules / virtual Ableton routing.
+- Live and step recording modes.
+- Count-in, metronome and quantization.
+- Take playback, add/replace score part, MIDI export and WAV export.
+
+## Studio Warm audio v1.2
+
+- Local multi-sample instrument pack for piano, accordion, guitar, violin, clarinet, alto sax and tenor sax.
+- No external sample CDN required.
+- Default sound for score playback, MIDI monitoring, take playback and WAV export.
+- Velocity-sensitive level/tone, instrument-specific attack/release and subtle vibrato.
+- Smooth looping for sustained instruments.
+- Adjustable warmth and room/reverb.
+- Gentle compression and stereo placement.
+- Light Synth fallback for low-CPU devices.

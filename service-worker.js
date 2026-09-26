@@ -1,4 +1,4 @@
-const C='music63-v2',A=['./','index.php','assets/app.css?v=2','assets/app.js?v=2','assets/notation.js?v=1','assets/midi.js?v=2','assets/musicxml.js?v=1','assets/icon.svg','manifest.webmanifest'];
+const C='music63-v4-studio-warm',A=['./','index.php','assets/app.css?v=4','assets/app.js?v=4','assets/notation.js?v=1','assets/midi.js?v=4','assets/audio.js?v=4','assets/musicxml.js?v=1','assets/icon.svg','manifest.webmanifest'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(C).then(c=>c.addAll(A)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(Promise.all([self.clients.claim(),caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==C).map(k=>caches.delete(k))))])));
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=new URL(e.request.url);if(u.pathname.includes('/api.php')||u.pathname.includes('/storage/'))return;e.respondWith(fetch(e.request).then(r=>{const x=r.clone();caches.open(C).then(c=>c.put(e.request,x));return r}).catch(()=>caches.match(e.request)))});

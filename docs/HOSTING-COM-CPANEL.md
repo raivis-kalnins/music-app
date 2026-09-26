@@ -62,3 +62,9 @@ As a temporary test only, rename `.htaccess` to `.htaccess.off` and reload. If t
 `storage/.htaccess` blocks direct web access to user/password hashes and private uploads on Apache/LiteSpeed. Do not remove it permanently.
 
 `server-check.php` contains no credentials or filesystem paths, but you may delete it after the site is working.
+
+## Updating to MIDI Studio v1.1
+
+If Music 63 is already working on your domain, use the `upgrade-only` package. Extract it over the existing document root. This package does not include `storage/` or `config.php`, so your existing login, songs and uploads remain untouched.
+
+After extraction use `Ctrl+F5` in Chrome/Edge. If the old MIDI screen is still visible, close all Music 63 tabs, reopen the site and refresh once more. Version 1.1 uses a new PWA cache name and `?v=3` assets to force the updated MIDI/audio code.

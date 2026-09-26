@@ -12,7 +12,7 @@ Private, password-protected PHP music notation and MIDI workspace intended for `
 - 88-key Web MIDI input for M-Audio Keystation 88 II and similar controllers.
 - Multi-track Standard MIDI export for Ableton Live plus per-part MIDI export.
 - MIDI import and basic MusicXML import/export.
-- Browser playback using Web Audio instrument presets.
+- Studio Warm local multi-sampled playback for piano, accordion, guitar, violin, clarinet and sax, with reverb/warmth controls; Light Synth remains as a fallback.
 - Original Smart Composer works offline in the browser.
 - Optional server-side AI composer when `OPENAI_API_KEY` is configured.
 - Private uploads for PDF, MIDI, MusicXML, audio and images.
@@ -39,9 +39,40 @@ The source links in the app are references only. The app intentionally does not 
 
 ## Notes about playback
 
-Built-in browser playback uses lightweight synthesized presets, not commercial sampled instruments. For realistic instrument sound, export MIDI to Ableton and use your licensed instruments/sample libraries.
+Version 1.2 uses the bundled **Studio Warm** multi-sample engine by default. The local acoustic-style samples, velocity-sensitive tone, room reverb and smooth sustained-instrument looping are designed for much more natural practice/preview playback than the earlier oscillator engine. `Light Synth` is still available as a low-CPU fallback. For final production, MIDI export / MIDI Thru to Ableton remains available for licensed commercial instrument libraries. See `docs/SOUND-ENGINE.md`.
 
 
 ## Hosting.com / cPanel
 
 See `docs/HOSTING-COM-CPANEL.md` for the exact deployment and HTTP 500 checklist.
+
+## MIDI live monitor and recording (v1.1)
+
+The MIDI 88 page now includes a complete live-performance workflow:
+
+- Built-in low-latency Web Audio monitoring so a MIDI controller is audible immediately after `Connect / refresh MIDI`.
+- Instrument monitor presets for piano, accordion, guitar, violin, B-flat clarinet, E-flat alto sax and B-flat tenor sax.
+- Monitor volume, velocity curve, MIDI channel filter, semitone transpose and octave controls.
+- Sustain pedal (CC64) and pitch-bend monitoring.
+- Optional MIDI Thru to a selected Web MIDI output for external synths or a virtual MIDI port feeding Ableton Live.
+- Live performance recording with BPM, 0/1/2-bar count-in, metronome and 1/16, 1/8 or 1/4 quantization.
+- Step-entry recording for deliberate note-by-note input.
+- Non-destructive take workflow: review/play a take, add it to a score, replace a part, or clear it.
+- Per-take Standard MIDI export and local 44.1 kHz WAV render.
+- The score editor's Play button now uses the same improved instrument engine.
+
+MIDI/audio preferences are stored in the browser for that device. Song data continues to be stored on the server.
+
+### Updating an existing installation
+
+Use the `upgrade-only` ZIP when updating an existing `music.63.lv` installation. It intentionally does not contain `storage/` or `config.php`, so existing users, passwords, songs, uploads, settings and server configuration are preserved.
+
+After uploading/extracting the update, reload the site twice or use a hard refresh (`Ctrl+F5`) so the PWA service worker replaces the old cached JavaScript.
+
+
+## Studio Warm sound engine (v1.2)
+
+- Local sample pack under `assets/sounds/` - no CDN dependency.
+- Default for score playback, MIDI monitoring, take playback and WAV export.
+- Warmth and room/reverb controls.
+- First use of an instrument loads about 1 MB of samples and caches them in the browser.
