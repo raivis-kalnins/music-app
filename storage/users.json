@@ -1,0 +1,11 @@
+[
+    {
+        "id": "usr_raivis_admin",
+        "email": "raivis@63.lv",
+        "name": "Raivis",
+        "role": "admin",
+        "disabled": false,
+        "passwordHash": "$2y$12$WsvnTxiSyO0Er95JYbe8NOrTzn0UBGCYzmVtuuSDTHwZmfZpZlL6m",
+        "createdAt": "2026-09-25T22:36:28+00:00"
+    }
+]
