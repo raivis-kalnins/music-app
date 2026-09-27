@@ -1,1 +1,21 @@
-{"name":"Music 63 Studio","short_name":"Music63","start_url":"./","display":"standalone","background_color":"#101827","theme_color":"#101827","icons":[{"src":"assets/icon.svg","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}]}
+{
+  "id":"./",
+  "name":"Music 63 Studio",
+  "short_name":"Music63",
+  "description":"Private score editor, MIDI studio and audio-to-notes workspace.",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "display_override":["window-controls-overlay","standalone"],
+  "background_color":"#101827",
+  "theme_color":"#101827",
+  "orientation":"any",
+  "icons":[
+    {"src":"assets/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ],
+  "shortcuts":[
+    {"name":"Music Editor","short_name":"Editor","url":"./?view=editor","icons":[{"src":"assets/icon-192.png","sizes":"192x192","type":"image/png"}]},
+    {"name":"Audio to Notes","short_name":"Audio Notes","url":"./?view=audio","icons":[{"src":"assets/icon-192.png","sizes":"192x192","type":"image/png"}]}
+  ]
+}

@@ -55,3 +55,45 @@
 - Adjustable warmth and room/reverb.
 - Gentle compression and stereo placement.
 - Light Synth fallback for low-CPU devices.
+
+## Easy score correction + handwriting v1.4
+
+- Prominent Delete selected action for a selected note.
+- Red tap-to-delete tool.
+- Delete/Backspace and right-click deletion.
+- Undo/redo history and keyboard shortcuts.
+- Clear-current-bar action with confirmation.
+- Side-by-side handwritten photo + score workspace.
+- Photo rotate, zoom and high-contrast controls.
+- Three-step handwriting flow: Load -> Read/review -> Apply.
+- AI transcription review draft before any score replacement.
+- Per-note AI confidence support and warnings.
+- Clear manual-tracing path when AI is not configured.
+
+## Audio -> Notes v1.7
+
+- Audio source panel inside Music Editor.
+- MP3/WAV/OGG/FLAC and browser-supported M4A/AAC input.
+- Direct audio URL preview/transcription when CORS permits.
+- YouTube and Spotify embedded preview plus explicit browser tab-audio capture (no stream ripping/downloading).
+- In-browser Spotify Basic Pitch transcription model.
+- Melody-only and polyphonic modes.
+- Clean/Balanced/Detailed detection thresholds.
+- 1/4, 1/8, 1/16 and 1/32 timing quantization based on song BPM.
+- Start-bar control.
+- Automatic concert-to-written pitch conversion for transposing score parts.
+- Review draft with note count/range before Replace or Append.
+- Imported notes remain fully editable and use all existing playback/export functions.
+
+## Sources, one-line melody, PWA and languages v1.8
+
+- Dedicated Audio -> Notes page in main navigation.
+- Default one-line melody extraction intended for clarinet, piano right hand, accordion melody and saxophone.
+- Optional simple chord draft from polyphonic detection.
+- Chords can be retained as chord symbols or converted to a simple Piano/Accordion accompaniment part.
+- Music sources hub with built-in Latvian reference links, search/filter and personal bookmarks saved per installation.
+- Uploaded-file library with audio playback, Audio -> Notes handoff, MIDI/MusicXML re-import, open and delete actions.
+- Android/Chrome/Edge install prompt and Apple PWA install guidance/icons/manifest support.
+- Automatic beaming for adjacent eighth and sixteenth notes in normal beat groups; option can be disabled in the editor.
+- UI language selector for EN, LV, DE, ES, FR, PL, RU, UK, LT, ET, SV, NO, DA, FI and IS.
+- Bundled translations for core navigation/editor actions; optional server-side AI translation/cache for remaining UI/help strings.

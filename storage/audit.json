@@ -24,5 +24,68 @@
         "user": "raivis@63.lv",
         "event": "login",
         "meta": []
+    },
+    {
+        "at": "2026-09-26T10:29:37+00:00",
+        "user": "raivis@63.lv",
+        "event": "login",
+        "meta": []
+    },
+    {
+        "at": "2026-09-26T11:07:31+00:00",
+        "user": "raivis@63.lv",
+        "event": "login",
+        "meta": []
+    },
+    {
+        "at": "2026-09-26T11:07:31+00:00",
+        "user": "raivis@63.lv",
+        "event": "save_ai_settings",
+        "meta": {
+            "model": "gpt-5.6-terra",
+            "source": "none"
+        }
+    },
+    {
+        "at": "2026-09-26T11:07:39+00:00",
+        "user": "raivis@63.lv",
+        "event": "login",
+        "meta": []
+    },
+    {
+        "at": "2026-09-26T11:07:39+00:00",
+        "user": "raivis@63.lv",
+        "event": "save_ai_settings",
+        "meta": {
+            "model": "gpt-5.6-terra",
+            "source": "saved"
+        }
+    },
+    {
+        "at": "2026-09-26T11:07:39+00:00",
+        "user": "raivis@63.lv",
+        "event": "save_ai_settings",
+        "meta": {
+            "model": "gpt-5.6-terra",
+            "source": "none"
+        }
+    },
+    {
+        "at": "2026-09-27T07:27:16+00:00",
+        "user": "raivis@63.lv",
+        "event": "login",
+        "meta": []
+    },
+    {
+        "at": "2026-09-27T14:54:57+00:00",
+        "user": "raivis@63.lv",
+        "event": "login",
+        "meta": []
+    },
+    {
+        "at": "2026-09-27T15:00:17+00:00",
+        "user": "raivis@63.lv",
+        "event": "login",
+        "meta": []
     }
 ]
