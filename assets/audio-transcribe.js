@@ -8,8 +8,8 @@ function roundTo(v,q){q=Math.max(.0625,+q||.25);return Math.round(v/q)*q}
 function detectSource(raw){
   const url=String(raw||'').trim();if(!url)return{type:'none',url:''};
   try{const u=new URL(url);const host=u.hostname.replace(/^www\./,'').toLowerCase();
-    if(host==='youtu.be'){const id=u.pathname.split('/').filter(Boolean)[0]||'';return{type:'youtube',url,id,embed:id?'https://www.youtube.com/embed/'+encodeURIComponent(id):''}}
-    if(host.endsWith('youtube.com')){let id=u.searchParams.get('v')||'';const bits=u.pathname.split('/').filter(Boolean);if(!id&&['shorts','embed','live'].includes(bits[0]))id=bits[1]||'';return{type:'youtube',url,id,embed:id?'https://www.youtube.com/embed/'+encodeURIComponent(id):''}}
+    if(host==='youtu.be'){const id=u.pathname.split('/').filter(Boolean)[0]||'',list=u.searchParams.get('list')||'';return{type:'youtube',url,id,list,embed:id?'https://www.youtube.com/embed/'+encodeURIComponent(id):''}}
+    if(host.endsWith('youtube.com')){let id=u.searchParams.get('v')||'';const bits=u.pathname.split('/').filter(Boolean),list=u.searchParams.get('list')||'';if(!id&&['shorts','embed','live'].includes(bits[0]))id=bits[1]||'';return{type:'youtube',url,id,list,embed:id?'https://www.youtube.com/embed/'+encodeURIComponent(id):''}}
     if(host==='open.spotify.com'||host.endsWith('.spotify.com')){const bits=u.pathname.split('/').filter(Boolean);const type=['track','album','playlist','episode','show'].includes(bits[0])?bits[0]:'track',id=bits[1]||'';return{type:'spotify',url,id,kind:type,embed:id?'https://open.spotify.com/embed/'+type+'/'+encodeURIComponent(id):''}}
     if(/\.(mp3|wav|ogg|flac|m4a|aac)(?:$|[?#])/i.test(u.pathname+u.search+u.hash))return{type:'audio',url,embed:url};
     return{type:'other',url};

@@ -97,3 +97,30 @@
 - Automatic beaming for adjacent eighth and sixteenth notes in normal beat groups; option can be disabled in the editor.
 - UI language selector for EN, LV, DE, ES, FR, PL, RU, UK, LT, ET, SV, NO, DA, FI and IS.
 - Bundled translations for core navigation/editor actions; optional server-side AI translation/cache for remaining UI/help strings.
+
+## v1.9 - complete localisation, cache reset and Media Studio
+
+- Localisation now runs across the complete rendered interface, including asynchronously-added controls, select options, placeholders, titles and ARIA labels. Core controls are bundled locally; any remaining built-in help text is translated through the configured OpenAI connection and cached server-side and in the browser.
+- Settings includes **Clear app cache** to remove the PWA/offline cache and translation caches and reload the newest application files without deleting songs, users or uploads.
+- **Media Studio** works with media the user has uploaded and has permission to edit. It previews audio/video, supports start/end trim and output level, and can export WAV or MP4 when FFmpeg is available on the server.
+- YouTube and Spotify links are kept as references/playback sources. They can be used with the browser-authorised tab-audio workflow for note detection, but Music 63 does not download or rip provider streams into MP4.
+- A new backing can be generated from chord symbols as an editable Piano, Accordion or Guitar score part and exported as a new Studio Warm WAV. This rebuilds accompaniment rather than copying the source recording.
+
+## v2.0 - Audio source reliability and score UI
+
+- YouTube Error 153 compatibility fix via a standards-compatible referrer policy and embed origin.
+- Clear provider tab-audio capture workflow for YouTube/Spotify -> editable melody notes.
+- Refreshed Audio -> Notes workspace styling and improved editor spacing/hierarchy.
+- Expanded built-in Latvian localisation for the audio/editor/source workflows.
+- Notis.lv removed; stronger Latvian library/cultural/publisher references added.
+- Classic stacked time signatures positioned next to the clef.
+
+## v2.1 score correction
+
+- Highlight and correct one bar at a time.
+- Snap dense imported passages to a 1/16, 1/8 or 1/4 grid.
+- Reduce false/duplicate notes without clearing the entire score.
+- Merge repeated adjacent pitches.
+- Quick note timing, duration, pitch and delete controls.
+- Classic stacked time signature beside the clef.
+- Classic-by-beat or continuous eighth/sixteenth beaming.

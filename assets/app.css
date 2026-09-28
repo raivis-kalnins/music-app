@@ -54,4 +54,195 @@
 .audio-workspace{display:grid;gap:14px;max-width:1180px;margin:auto}.audio-workspace-head{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}.audio-workspace-head h3{font-size:23px;margin:4px 0 5px}.audio-workspace-head p{margin:0;line-height:1.5;color:#c8d8e9}.audio-target-summary{display:grid;grid-template-columns:auto auto;gap:4px 10px;padding:12px;border:1px solid #34506d;border-radius:12px;background:#0b1727;font-size:11px}.audio-target-summary span{color:var(--muted)}.audio-after .source-flow{margin:10px 0}.audio-workspace .audio-to-notes{margin:0;background:#fbfcff}.audio-step-banner{display:flex;gap:9px;align-items:center;margin:10px 0 2px;padding:8px 10px;border-left:4px solid #6659f6;background:#f4f2ff;border-radius:6px;font-size:9px;color:#555d70}.audio-step-banner span{color:#73798a}.audio-options-extended{grid-template-columns:1.55fr 1.4fr 1fr 1fr .65fr}.audio-chord-option{display:grid;grid-template-columns:minmax(240px,1fr) minmax(220px,.8fr);gap:7px;align-items:center;margin:9px 0;padding:8px;border:1px solid #d7ddeb;background:#f7f9fc;border-radius:8px;font-size:9px;color:#505b70}.audio-chord-option label{display:flex;align-items:center;gap:6px}.audio-chord-option select{border:1px solid #d2d7e2;background:#fff;border-radius:7px;padding:6px 7px}.audio-chord-option small{grid-column:1/-1;color:#777f8f}.audio-chord-list{display:flex;gap:4px;align-items:center;flex-wrap:wrap;margin:6px 0 8px;font-size:8px;color:#5d6575}.audio-chord-list span{padding:3px 5px;border:1px solid #ddd8b9;background:#fffbe8;border-radius:5px;color:#6d5c22}
 @media(max-width:1200px){.sources-hero,.sources-grid{grid-template-columns:1fr}.source-flow{grid-template-columns:repeat(2,1fr)}.audio-options-extended{grid-template-columns:1fr 1fr}.audio-workspace-head{grid-template-columns:1fr}.audio-target-summary{justify-self:start}.source-search{width:190px}.source-category{width:160px}}
 @media(max-width:760px){.source-flow{grid-template-columns:1fr}.source-resource-grid{grid-template-columns:1fr}.source-search,.source-category{width:100%}.source-library-card>.toolbar{display:grid;grid-template-columns:1fr}.audio-chord-option{grid-template-columns:1fr}.audio-options-extended{grid-template-columns:1fr}.top-language{max-width:105px}.install-top{display:none}}
-@media(max-width:980px){.nav{grid-template-columns:repeat(7,minmax(76px,1fr));overflow-x:auto}.nav button{white-space:nowrap}.topbar{padding:10px 12px}.topbar .toolbar{gap:5px}.topbar .toolbar .btn{padding:6px 7px}.top-language{padding:5px 6px}}
+@media(max-width:980px){.nav{grid-template-columns:repeat(8,minmax(76px,1fr));overflow-x:auto}.nav button{white-space:nowrap}.topbar{padding:10px 12px}.topbar .toolbar{gap:5px}.topbar .toolbar .btn{padding:6px 7px}.top-language{padding:5px 6px}}
+
+/* Music 63 v1.9 - media studio + cache controls */
+.media-studio{display:grid;gap:16px;max-width:1240px;margin:auto}.media-studio-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);gap:16px;align-items:center;background:linear-gradient(135deg,#162a46,#12223a 55%,#2b2444)}.media-studio-hero h3{font-size:24px;margin:4px 0 6px}.media-studio-hero p{margin:0;line-height:1.55;color:#c8d8e9}.media-studio-player{display:block;width:100%;max-height:410px;background:#05080d;border:1px solid var(--line);border-radius:12px;margin-top:10px}.media-studio-audio{width:100%;margin-top:10px}.media-mini-video{width:100%;max-height:180px;background:#05080d;border-radius:8px}.cache-settings{padding:12px;border:1px solid var(--line);border-radius:12px;background:#0b1727}.cache-settings h3{margin:0 0 5px}.media-studio .source-flow{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:980px){.media-studio-hero{grid-template-columns:1fr}.nav{grid-template-columns:repeat(8,minmax(76px,1fr))}}
+@media(max-width:760px){.media-studio .source-flow{grid-template-columns:1fr}}
+
+/* Music 63 v2.0 - audio workflow, engraving and editor polish */
+.time{font:700 18px Georgia,"Times New Roman",serif;fill:#111}.time-top,.time-bottom{font-variant-numeric:lining-nums tabular-nums}
+.audio-workspace{max-width:1280px;gap:18px}.audio-workspace-head{padding:22px 24px;background:linear-gradient(135deg,#10233c 0%,#122c45 52%,#173a35 100%);box-shadow:0 18px 45px #0002}.audio-workspace-head .eyebrow{color:#a8f17c}.audio-workspace-head h3{font-size:28px;letter-spacing:-.02em}.audio-target-summary{min-width:220px;border-color:#41627f;background:#0a1727cc;box-shadow:inset 0 1px 0 #ffffff0c}
+.audio-to-notes-standalone{border:1px solid #2d4562;border-radius:18px;background:linear-gradient(180deg,#13243a 0%,#0d1a2b 100%);color:#eef6ff;box-shadow:0 22px 50px #0004;overflow:hidden}.audio-to-notes-standalone .audio-source-body{padding:20px}.audio-to-notes-standalone .audio-source-intro strong{font-size:17px}.audio-to-notes-standalone .audio-source-intro p{font-size:12px;color:#a9bdd2;max-width:760px}.audio-to-notes-standalone .source-kind{background:#192c49;border-color:#3e5a7a;color:#b9dcff;font-size:10px}.audio-to-notes-standalone .source-url-row{grid-template-columns:minmax(320px,1fr) auto auto;gap:9px}.audio-to-notes-standalone .source-url-row input,.audio-to-notes-standalone .audio-options select,.audio-to-notes-standalone .audio-options input,.audio-to-notes-standalone .audio-chord-option select{background:#081523;color:#edf7ff;border-color:#35506f;border-radius:10px;padding:10px 11px;font-size:12px}.audio-to-notes-standalone .source-url-row button,.audio-to-notes-standalone .source-file-btn,.audio-to-notes-standalone .audio-actions button,.audio-to-notes-standalone .audio-draft-actions button{background:#162a43;color:#eef6ff;border-color:#35506f;border-radius:10px;padding:10px 13px;font-size:11px}.audio-to-notes-standalone .source-file-btn{background:#20344f}.audio-to-notes-standalone .audio-preview{border-color:#29415d;background:#07101c;border-radius:14px;box-shadow:inset 0 0 0 1px #ffffff05}.audio-to-notes-standalone .audio-video-preview iframe{height:390px}.audio-to-notes-standalone .spotify iframe{height:180px}.audio-to-notes-standalone .audio-preview-actions{border-top-color:#253b54;background:#0b1727;color:#9fb4ca}.audio-to-notes-standalone .audio-preview-actions a{color:#9fe870}.audio-to-notes-standalone .audio-source-empty{border-color:#35506f;background:#0b1727;color:#9eb2c8}.audio-to-notes-standalone .audio-source-empty b{color:#eef6ff}.audio-to-notes-standalone .audio-open-source{color:#9fe870}.audio-to-notes-standalone .audio-step-banner{border-left-color:#9fe870;background:#122942;color:#d7e8f7;border-radius:9px;padding:10px 12px;font-size:11px}.audio-to-notes-standalone .audio-step-banner span{color:#98aec5}.audio-to-notes-standalone .audio-options label>span{color:#9fb4c9;font-size:9px}.audio-to-notes-standalone .audio-convert{background:#0b2135;border-color:#2c4a67;color:#b8cee1;font-size:11px}.audio-to-notes-standalone .audio-chord-option{background:#0b1727;border-color:#29415d;color:#b9cbdd;font-size:11px}.audio-to-notes-standalone .audio-chord-option small{color:#8fa4bb}.audio-to-notes-standalone .audio-actions .audio-read-primary{background:#9fe870;border-color:#9fe870;color:#0b1a11}.audio-to-notes-standalone .audio-actions .audio-capture{background:#1c3452;border-color:#4b6d93;color:#e9f5ff}.audio-to-notes-standalone .audio-actions .audio-capture-stop{background:#7d2637;border-color:#a84458;color:#fff}.audio-to-notes-standalone .audio-rights{color:#90a7bd;font-size:10px}.audio-to-notes-standalone .capture-help{background:#0d2135;border-color:#2b4a68;color:#bcd0e3}.audio-to-notes-standalone .audio-progress{background:#081523;border-color:#2d4764}.audio-to-notes-standalone .audio-progress>div{color:#aabdd0}.audio-to-notes-standalone .audio-progress progress{accent-color:#9fe870}.audio-to-notes-standalone .audio-draft{background:#0a1727;border-color:#34516f}.audio-to-notes-standalone .audio-draft-meta,.audio-to-notes-standalone .palette-hint{color:#9dafc2}.audio-to-notes-standalone .audio-note-list span{background:#13263d;border-color:#2d4662;color:#d8e8f7}.audio-to-notes-standalone .audio-chord-list span{background:#2b2a16;border-color:#5b5730;color:#ffeaa4}.audio-to-notes-standalone .audio-source-tip{background:#2a2415;border-color:#5d522a;color:#e5d79c}
+.audio-wizard{display:grid;grid-template-columns:auto 1fr auto 1fr auto;align-items:center;gap:9px;margin-bottom:16px}.audio-wizard>div{display:flex;align-items:center;gap:7px;font-size:10px;font-weight:800;color:#6c7484}.audio-wizard>div b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#dfe3ec;color:#555d6d}.audio-wizard>i{height:2px;background:#dfe3ec;border-radius:99px}.audio-to-notes-standalone .audio-wizard>div{color:#9aafc4}.audio-to-notes-standalone .audio-wizard>div b{background:#1d3551;color:#dcecff}.audio-to-notes-standalone .audio-wizard>i{background:#2a4562}.audio-wizard.source-ready>div:first-child b,.audio-wizard.active>div:nth-of-type(-n+2) b,.audio-wizard.done>div b{background:#9fe870;color:#0c1911}.audio-wizard.source-ready>i:first-of-type,.audio-wizard.active>i:first-of-type,.audio-wizard.done>i{background:#7fbd5d}
+.audio-preview-actions{display:flex;gap:10px;align-items:center;padding:8px 10px;border-top:1px solid #d7dce7;background:#f8f9fc;font-size:9px;color:#687080}.audio-preview-actions span{flex:1}.audio-preview-actions a{color:#5147c9;font-weight:800;text-decoration:none}.capture-help{display:flex;gap:7px;align-items:flex-start;margin-top:9px;padding:9px 10px;border:1px solid #d6dbea;background:#f4f7fb;border-radius:9px;font-size:9px;line-height:1.45;color:#566174}.capture-help b{white-space:nowrap}
+
+/* cleaner score editor */
+.studio-editor-shell{--ed-bg:#e8edf4;--ed-panel:#f7f9fc;grid-template-columns:236px minmax(650px,1fr) 270px;background:linear-gradient(180deg,#edf1f7,#e6ebf2)}.studio-palette,.studio-inspector{background:#f8fafddd;backdrop-filter:blur(12px);box-shadow:0 0 28px #23314910}.studio-palette{padding:18px}.studio-inspector{padding:16px}.tool-btn,.duration-btn,.tool-wide,.import-photo-btn{border-radius:11px;box-shadow:0 1px 0 #fff inset;transition:.15s ease}.tool-btn:hover,.duration-btn:hover,.tool-wide:hover,.import-photo-btn:hover{transform:translateY(-1px);border-color:#aeb6ca;box-shadow:0 5px 14px #26324a12}.tool-btn.active,.duration-btn.active,.segmented button.active{background:linear-gradient(180deg,#f0eeff,#e8e5ff);box-shadow:0 0 0 1px #6f62ff24 inset}.editor-top{padding:10px 12px;background:linear-gradient(90deg,#181c25,#202632 58%,#182126);box-shadow:0 4px 18px #11182725}.editor-title-row{margin-bottom:8px}.title-input,.composer-input{border-radius:9px}.editor-transport button,.export-popover button{border-radius:9px}.song-info{margin:12px 14px 0;border-radius:12px}.paper-wrap{padding:24px 18px 30px;background:linear-gradient(180deg,#e8edf4,#e4eaf1)}.score-paper{max-width:1400px;margin:0 auto;background:#fffefb;border:1px solid #dfe3e8;border-radius:10px;box-shadow:0 12px 30px #23304a18}.studio-editor-shell .score-svg{background:#fffefb;padding:4px 0}.selected-note-strip,.editor-help-strip{margin:10px 14px 0;border-radius:11px}.editor-status{height:auto;min-height:34px;padding:8px 14px;background:#f8fafc}.editor-piano{padding:9px 12px;background:#171b22}.instrument-row{border-radius:11px}.note-inspector input,.note-inspector select,.part-inst,.mini-field select,.mini-field input{border-radius:9px}.palette-label{margin-top:18px}.palette-hint{font-size:9.5px}.audio-open-tool{background:linear-gradient(180deg,#eef8ff,#e2f3ff);border-color:#b8d9ee;color:#205773}
+@media(max-width:1450px){.studio-editor-shell{grid-template-columns:210px minmax(570px,1fr) 230px}.studio-palette{padding:13px}.studio-inspector{padding:12px}.audio-to-notes-standalone .audio-video-preview iframe{height:330px}}
+@media(max-width:1100px){.studio-editor-shell{grid-template-columns:190px minmax(520px,1fr) 210px}.audio-to-notes-standalone .source-url-row{grid-template-columns:1fr auto}.audio-to-notes-standalone .source-file-btn{grid-column:1/-1}.audio-to-notes-standalone .audio-video-preview iframe{height:280px}}
+@media(max-width:760px){.audio-wizard{grid-template-columns:1fr}.audio-wizard>i{display:none}.audio-wizard>div{justify-content:flex-start}.audio-to-notes-standalone .source-url-row{grid-template-columns:1fr}.audio-to-notes-standalone .audio-video-preview iframe{height:220px}.audio-preview-actions{display:grid}.capture-help{display:grid}}
+/* v2.0 integrated Audio -> Notes panel: same studio language as standalone */
+.studio-editor-shell .audio-to-notes{margin:12px 14px 0;border:1px solid #29415d;border-radius:14px;background:linear-gradient(180deg,#13243a,#0c192a);color:#eaf5ff;box-shadow:0 12px 28px #2432471c;overflow:hidden}
+.studio-editor-shell .audio-to-notes>summary{padding:11px 13px;background:#102036;color:#edf7ff;border-bottom:1px solid #29415d;display:flex;align-items:center;gap:8px;cursor:pointer}
+.studio-editor-shell .audio-to-notes>summary small{color:#91a8bf}.studio-editor-shell .audio-to-notes .audio-source-body{padding:13px}
+.studio-editor-shell .audio-to-notes .audio-source-intro p,.studio-editor-shell .audio-to-notes .audio-rights,.studio-editor-shell .audio-to-notes .audio-options label>span{color:#93a9bf}
+.studio-editor-shell .audio-to-notes .source-url-row input,.studio-editor-shell .audio-to-notes .audio-options select,.studio-editor-shell .audio-to-notes .audio-options input,.studio-editor-shell .audio-to-notes .audio-chord-option select{background:#071420;color:#eef7ff;border-color:#35506f}
+.studio-editor-shell .audio-to-notes .source-url-row button,.studio-editor-shell .audio-to-notes .source-file-btn,.studio-editor-shell .audio-to-notes .audio-actions button,.studio-editor-shell .audio-to-notes .audio-draft-actions button{background:#182d47;color:#eef7ff;border-color:#3a5879}
+.studio-editor-shell .audio-to-notes .audio-preview{background:#07101c;border-color:#29415d}.studio-editor-shell .audio-to-notes .audio-preview-actions{background:#0b1727;border-color:#29415d;color:#a0b5ca}.studio-editor-shell .audio-to-notes .audio-preview-actions a{color:#a8ef7b}
+.studio-editor-shell .audio-to-notes .audio-step-banner{background:#122942;border-left-color:#9fe870;color:#d7e8f7}.studio-editor-shell .audio-to-notes .audio-step-banner span{color:#98aec5}
+.studio-editor-shell .audio-to-notes .audio-convert,.studio-editor-shell .audio-to-notes .capture-help{background:#0d2135;border-color:#2b4a68;color:#bdd1e4}.studio-editor-shell .audio-to-notes .audio-chord-option{background:#0b1727;border-color:#29415d;color:#b9cbdd}.studio-editor-shell .audio-to-notes .audio-source-tip{background:#292313;border-color:#5d522a;color:#e4d79e}
+.studio-editor-shell .audio-to-notes .audio-actions .audio-read-primary{background:#9fe870;border-color:#9fe870;color:#0b1a11}.studio-editor-shell .audio-to-notes .audio-actions .audio-capture-stop{background:#7c2637;border-color:#a84458}.studio-editor-shell .audio-to-notes .audio-wizard>div{color:#9aafc4}.studio-editor-shell .audio-to-notes .audio-wizard>div b{background:#1d3551;color:#dcecff}.studio-editor-shell .audio-to-notes .audio-wizard>i{background:#2a4562}
+
+/* Music 63 v2.1 - passage correction, classic meter and stronger beaming */
+.time{font:700 21px "Times New Roman",Georgia,serif;fill:#111}.time-top,.time-bottom{font-variant-numeric:lining-nums tabular-nums}.clef{font-size:56px}.active-bar-bg{fill:#7569ff;opacity:.065;pointer-events:none}.beam{stroke-width:5}.beam.beam-secondary{stroke-width:4}.beam.beam-tertiary{stroke-width:3.7}.passage-correct-card{border:1px solid #d8dce8;border-radius:12px;background:linear-gradient(180deg,#fbfcff,#f4f6fb);padding:9px;margin-top:4px;box-shadow:0 4px 12px #26324a0b}.passage-bar-row{display:grid;grid-template-columns:32px minmax(70px,1fr) 32px auto;gap:5px;align-items:end}.passage-bar-row button,.passage-actions button{border:1px solid #d6dae5;background:#fff;color:#303541;border-radius:8px;padding:7px 6px;font-size:9px;font-weight:750;cursor:pointer}.passage-bar-row label{display:grid;gap:3px;font-size:8px;font-weight:800;color:#697082}.passage-bar-row input{width:100%;border:1px solid #d6dae5;background:#fff;color:#232733;border-radius:7px;padding:6px}.passage-bar-row b{font-size:8px;color:#707789;white-space:nowrap;padding-bottom:7px}.passage-actions{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin:7px 0}.passage-actions .primary-clean{background:#e9f7ef;border-color:#abd8bb;color:#236f42}.passage-actions .danger-clean{background:#fff3f4;border-color:#efc2c8;color:#b23e4e}.selected-note-strip{flex-wrap:wrap}.selected-note-main{display:flex;gap:8px;align-items:center}.selected-note-actions{display:flex;gap:5px;align-items:center;flex-wrap:wrap}.selected-note-actions button{white-space:nowrap}.studio-editor-shell .score-paper{overflow:hidden}.studio-editor-shell .score-svg{overflow:visible}
+@media(max-width:1450px){.passage-bar-row{grid-template-columns:30px minmax(64px,1fr) 30px}.passage-bar-row b{grid-column:1/-1;padding:0}.passage-actions{grid-template-columns:1fr}.selected-note-actions{width:100%}}
+
+/* v2.2 handwriting conversion */
+.photo-prepare-btn{background:linear-gradient(180deg,#fff8e8,#fff1cc);border-color:#e4c87d;color:#6f5010}.photo-test-btn{background:#edf8ff;border-color:#b9d9ee;color:#245c7d}.convert-photo-btn{background:linear-gradient(180deg,#6f62ff,#5b4be9)!important;border-color:#5b4be9!important;color:#fff!important;font-weight:850!important}.photo-toolbar button.active{background:#ebe8ff;border-color:#7265ff;color:#5144da}.photo-convert-panel{margin:10px 0;padding:10px;border:1px solid #cfd6e5;background:linear-gradient(180deg,#fff,#f6f8fc);border-radius:11px}.photo-convert-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}.photo-convert-head b{font-size:11px}.photo-convert-head span{font-size:8px;color:#477b58;background:#e5f6e9;border-radius:99px;padding:3px 6px}.photo-convert-grid{display:grid;grid-template-columns:1.4fr 1fr .7fr;gap:6px}.photo-convert-grid label{display:grid;gap:3px}.photo-convert-grid label>span{font-size:8px;text-transform:uppercase;letter-spacing:.04em;color:#72798a;font-weight:800}.photo-convert-grid select,.photo-convert-grid input{min-width:0;border:1px solid #cfd5e2;background:#fff;border-radius:7px;padding:6px 7px;font-size:9px;color:#2c3140}.photo-convert-actions{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:6px;margin-top:8px}.photo-convert-actions button{border:1px solid #cbd2df;border-radius:8px;background:#fff;color:#303542;padding:7px 7px;font-size:9px;font-weight:800;cursor:pointer}.photo-convert-actions .photo-read-big{background:#6659f6;border-color:#6659f6;color:#fff;width:auto;margin:0}.photo-status{min-height:28px;margin-top:8px;padding:7px 8px;border-radius:8px;background:#eef3f8;color:#647084;font-size:8.5px;line-height:1.4}.photo-status.ok{background:#edf8f0;color:#356848}.photo-status.error{background:#fff0f1;color:#9b3945;border:1px solid #efc1c7}.photo-diag{font-size:8px;color:#8a90a0;margin-top:3px}.photo-result-actions{grid-template-columns:1fr 1fr}.photo-result-actions #photoNewPart,.photo-result-actions #photoRetryHigh{grid-column:auto}.photo-result-actions #photoDiscard{grid-column:1/-1}.photo-apply-main{font-weight:850!important}.photo-empty-result{display:grid;gap:5px;margin-top:7px;padding:8px;border:1px solid #ead4a0;background:#fff9e8;border-radius:8px;font-size:9px;color:#6d5b2b}.photo-empty-result span{font-size:8px;line-height:1.4}.photo-empty-result button{justify-self:start;border:1px solid #d3bd79;background:#fff;border-radius:7px;padding:6px 8px;font-size:8px;font-weight:800;cursor:pointer}
+@media(max-width:700px){.photo-convert-grid{grid-template-columns:1fr}.photo-convert-actions{grid-template-columns:1fr}.photo-result-actions{grid-template-columns:1fr}.photo-result-actions #photoDiscard{grid-column:auto}}
+
+/* v2.3 - free on-device handwriting scan */
+.local-photo-btn.convert-photo-btn{background:linear-gradient(180deg,#52c96f,#34a956)!important;border-color:#2f9c4d!important;color:#092d15!important;text-shadow:none!important}.ai-ready.local-ok{color:#237047}.photo-convert-actions .photo-read-big.local-scan{background:linear-gradient(180deg,#59ce76,#37ad59);border-color:#329f51;color:#092d15}.photo-convert-actions .photo-read-big.local-scan:hover,.local-photo-btn.convert-photo-btn:hover{filter:brightness(.97)}
+
+/* v2.4 local-only handwriting scanner */
+.local-only-grid{grid-template-columns:minmax(220px,1fr) minmax(130px,.45fr)!important}.photo-local-note{margin-top:10px;padding:10px 12px;border-radius:10px;background:#eefaf1;border:1px solid #bde8c6;color:#1d5b2a;font-size:12px;line-height:1.45}.photo-convert-head span{font-weight:700}.photo-convert-grid select:disabled{opacity:1;color:inherit;cursor:default}.photo-result.setup{border-color:#bde8c6;background:#f3fbf5}
+
+/* v2.5 deeper local handwriting scan */
+.local-only-grid{grid-template-columns:minmax(190px,1.15fr) minmax(145px,.72fr) minmax(105px,.45fr)!important}
+.local-scan-actions{grid-template-columns:minmax(120px,.72fr) minmax(220px,1.55fr)!important}
+#photoSensitivity{font-weight:750;background:#f3fff5;border-color:#a9dfb5}
+.photo-local-note{background:linear-gradient(180deg,#effbf2,#e8f8ec);border-color:#addfba}
+@media(max-width:900px){.local-only-grid,.local-scan-actions{grid-template-columns:1fr!important}}
+
+/* v2.6 handwriting proofread */
+.photo-image-stage{position:relative;flex:0 0 auto;min-width:60%;max-width:none;line-height:0;transform-origin:top center}
+.photo-image-stage img{display:block;width:100%;height:auto;max-width:none}
+.photo-detect-marker{position:absolute;z-index:5;width:18px;height:18px;transform:translate(-50%,-50%);border:2px solid #167a35;border-radius:50%;background:rgba(89,206,118,.78);box-shadow:0 0 0 2px rgba(255,255,255,.9);padding:0;cursor:default;line-height:14px;text-align:center}
+.photo-detect-marker span{display:none}
+.photo-detect-marker.low{border-color:#b47b13;background:rgba(255,198,75,.82)}
+.review-remove .photo-detect-marker{cursor:pointer;background:rgba(255,95,105,.86);border-color:#9c2531}
+.review-add .photo-image-stage{cursor:crosshair}
+.photo-proofread{display:grid;gap:7px;margin:9px 0;padding:9px;border:1px solid #acdcb7;border-radius:9px;background:#f0faf3;color:#245c30}
+.photo-proofread>div:first-child{display:grid;gap:2px}
+.photo-proofread b{font-size:9px}.photo-proofread span,.photo-proofread small{font-size:8px;line-height:1.4;color:#4d6d55}
+.photo-review-actions{display:flex;gap:5px;flex-wrap:wrap}
+.photo-review-actions button{border:1px solid #b9c9bf;background:#fff;color:#35533d;border-radius:7px;padding:6px 8px;font-size:8px;font-weight:800;cursor:pointer}
+.photo-review-actions button.active{background:#daf6e1;border-color:#56b96d;color:#145626}
+.photo-review-actions button.danger-lite{background:#fff0f1;border-color:#e1a5ab;color:#8e2d36}
+.local-only-grid{grid-template-columns:minmax(160px,1.2fr) minmax(120px,.85fr) minmax(125px,.8fr)!important}
+@media(max-width:700px){.local-only-grid{grid-template-columns:1fr!important}.photo-detect-marker{width:20px;height:20px}.photo-review-actions{display:grid;grid-template-columns:1fr}}
+/* v2.6 staff-system selection + clearer proofread markers */
+.photo-detect-marker span{display:block;font-size:7px;font-weight:900;color:#073a16;line-height:14px;pointer-events:none}
+.photo-detect-marker.low span{color:#573a00}
+.photo-detect-marker.system-off{opacity:.34;filter:grayscale(1);border-color:#6e7b72;background:rgba(180,188,183,.78)}
+.photo-detect-marker.system-off span{color:#39413c}
+.photo-system-select{display:grid;gap:7px;margin:9px 0;padding:9px;border:1px solid #c9d7e0;border-radius:9px;background:#f7fafc;color:#314452}
+.photo-system-select>div:first-child{display:grid;gap:2px}.photo-system-select b{font-size:9px}.photo-system-select span{font-size:8px;line-height:1.4;color:#617481}
+.photo-system-buttons{display:flex;gap:5px;flex-wrap:wrap}.photo-system-buttons button{border:1px solid #bdcbd5;background:#fff;color:#49606f;border-radius:7px;padding:6px 9px;font-size:8px;font-weight:800;cursor:pointer}.photo-system-buttons button.active{background:#e4f8e8;border-color:#62be76;color:#145b27}
+@media(max-width:700px){.photo-system-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* v2.7 handwriting accuracy + marker correction */
+.photo-bar-marker{position:absolute;z-index:3;border-left:1px dashed rgba(89,82,190,.75);pointer-events:none;transform:translateX(-.5px)}
+.photo-detect-marker{cursor:pointer}
+.photo-detect-marker.selected{z-index:7;border-color:#5d43d8;background:rgba(154,133,255,.9);box-shadow:0 0 0 3px rgba(255,255,255,.96),0 0 0 5px rgba(93,67,216,.28)}
+.photo-detect-marker.selected span{color:#fff}
+.photo-selected-editor{display:grid;gap:7px;margin:8px 0;padding:9px;border:1px solid #b9afe8;border-radius:9px;background:#f6f3ff;color:#302765}
+.photo-selected-editor>div:first-child{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.photo-selected-editor>div:first-child span{font-size:8px;color:#665b8e}
+.photo-selected-actions{display:flex;gap:5px;flex-wrap:wrap}.photo-selected-actions button{border:1px solid #c8c1e8;background:#fff;color:#413679;border-radius:7px;padding:6px 8px;font-size:8px;font-weight:800;cursor:pointer}.photo-selected-actions button:hover{background:#eee9ff}.photo-selected-actions button.danger-lite{border-color:#e2acb2;background:#fff4f5;color:#8c2b35}.photo-selected-editor small{font-size:8px;line-height:1.4;color:#6b6288}
+@media(max-width:700px){.photo-selected-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.photo-selected-actions button{width:100%}}
+.arrangement-tools{margin-top:10px;padding:10px;border:1px solid #d9e2ef;border-radius:10px;background:#f8fbff;display:grid;gap:8px}.arrangement-tools>b{font-size:12px;text-transform:uppercase;letter-spacing:.05em}.arrangement-tools button,.arrangement-tools select,.chord-entry input{min-height:34px;border:1px solid #c9d5e5;border-radius:8px;background:#fff;padding:6px 8px}.arrangement-tools small{color:#667085;line-height:1.35}.chord-entry{display:grid;grid-template-columns:1fr auto;gap:6px}.chord-entry button{white-space:nowrap}.note-inspector .inspector-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:7px}
+
+
+/* v2.9 - readable local workflow + core notation modules */
+.audio-workspace{max-width:1320px}
+.audio-workspace-head{background:linear-gradient(135deg,#f7fbff,#eef7f6)!important;color:#172235!important;border:1px solid #cfdbe8!important;box-shadow:0 14px 34px #25324b14!important}
+.audio-workspace-head .eyebrow{color:#316b48!important;font-size:12px;font-weight:900}.audio-workspace-head h3{font-size:32px!important;color:#122033!important}.audio-workspace-head p{font-size:16px!important;line-height:1.55!important;color:#43556b!important}.audio-target-summary{background:#fff!important;border-color:#c9d7e7!important;color:#172235!important;font-size:13px!important}.audio-target-summary span{color:#66758a!important}
+.audio-to-notes-standalone{background:#fff!important;color:#172235!important;border-color:#ccd8e6!important;box-shadow:0 18px 44px #23324a18!important}.audio-to-notes-standalone .audio-source-body{padding:24px!important}.audio-to-notes-standalone .audio-source-intro strong{font-size:21px!important;color:#142238!important}.audio-to-notes-standalone .audio-source-intro p{font-size:14px!important;color:#52657b!important}.audio-to-notes-standalone .source-kind{background:#eef5ff!important;border-color:#bfd0e6!important;color:#2c5680!important;font-size:11px!important}.audio-to-notes-standalone .source-url-row input,.audio-to-notes-standalone .audio-options select,.audio-to-notes-standalone .audio-options input,.audio-to-notes-standalone .audio-chord-option select{background:#fff!important;color:#172235!important;border-color:#bfcddd!important;font-size:14px!important;padding:12px 13px!important}.audio-to-notes-standalone .source-url-row button,.audio-to-notes-standalone .source-file-btn,.audio-to-notes-standalone .audio-actions button,.audio-to-notes-standalone .audio-draft-actions button{background:#f5f8fc!important;color:#1f344d!important;border-color:#bdcada!important;font-size:13px!important;padding:12px 15px!important}.audio-to-notes-standalone .audio-actions .audio-read-primary{background:#7bdc64!important;border-color:#64c64e!important;color:#102b13!important;font-size:15px!important}.audio-to-notes-standalone .audio-options label>span{color:#52657a!important;font-size:11px!important}.audio-to-notes-standalone .audio-step-banner{background:#eef7ff!important;border-left-color:#5a7fe8!important;color:#243a55!important;font-size:13px!important;padding:12px 14px!important}.audio-to-notes-standalone .audio-step-banner span{color:#5d6f83!important}.audio-to-notes-standalone .audio-convert,.audio-to-notes-standalone .capture-help{background:#f6f9fc!important;border-color:#d1dce8!important;color:#40566e!important;font-size:13px!important}.audio-to-notes-standalone .audio-chord-option{background:#fafbfd!important;border-color:#d1dbe7!important;color:#40566e!important;font-size:13px!important}.audio-to-notes-standalone .audio-chord-option small{color:#66768a!important}.audio-to-notes-standalone .audio-rights{color:#60738a!important;font-size:12px!important}.audio-to-notes-standalone .audio-source-tip{background:#fff8dd!important;border-color:#ead99a!important;color:#5f542e!important;font-size:12px!important}.audio-to-notes-standalone .audio-progress{background:#f8fbff!important;border-color:#cbd7e5!important}.audio-to-notes-standalone .audio-progress>div{color:#566b82!important}.audio-to-notes-standalone .audio-draft{background:#fff!important;border-color:#c9d6e5!important}.audio-to-notes-standalone .audio-draft-meta{color:#5d7085!important}.audio-to-notes-standalone .audio-note-list span{background:#f5f8fc!important;border-color:#d3dce8!important;color:#263a52!important}.audio-to-notes-standalone .audio-wizard>div{font-size:13px!important;color:#52657a!important}.audio-to-notes-standalone .audio-wizard>div b{width:34px!important;height:34px!important;background:#e8eef6!important;color:#334b66!important}.audio-to-notes-standalone .audio-wizard>i{background:#cfd9e6!important}.audio-wizard.source-ready>div:first-child b,.audio-wizard.active>div:nth-of-type(-n+2) b,.audio-wizard.done>div b{background:#7bdc64!important;color:#143119!important}
+.local-composer-card .notice.ok{background:#eefaf1;border:1px solid #b7dfc0;color:#275b33}.local-composer-card .eyebrow{color:#3c6c52}.lyrics-tool{display:grid;gap:6px}.lyrics-tool textarea{min-height:64px;resize:vertical;border:1px solid #c9d5e5;border-radius:8px;padding:8px;font:inherit}.lyrics-tool button{min-height:32px;border:1px solid #c9d5e5;border-radius:8px;background:#fff;font-weight:700}.marking-checks{display:grid;gap:5px;margin-top:8px;font-size:11px}.marking-checks label{display:flex;gap:6px;align-items:center}.perc-head{stroke:#111;stroke-width:2.2;stroke-linecap:round}.articulation{font-size:16px;font-weight:900;fill:#171717}.dynamic-mark{font-family:Georgia,serif;font-style:italic;font-weight:700;font-size:15px;fill:#222}.tuplet-mark{font-family:Georgia,serif;font-style:italic;font-size:12px;fill:#222}.tie-curve,.slur-curve{fill:none;stroke:#171717;stroke-width:1.7;stroke-linecap:round}.lyric{font-size:11px!important;fill:#30343c}.note-inspector .two select{min-width:0}
+
+/* v2.9 core notation + readability */
+.marking-grid select,.marking-grid label,.lyrics-tool textarea{font-size:13px}
+.audio-workspace .audio-step-card,.audio-workspace .audio-panel{font-size:15px;line-height:1.5}
+.audio-workspace h2,.audio-workspace h3{letter-spacing:-.01em}
+.audio-workspace input,.audio-workspace select,.audio-workspace button{min-height:42px;font-size:14px}
+.selected-note-inspector select{min-height:34px}
+.dynamic-mark{font-style:italic;font-weight:700;font-family:Georgia,serif}.articulation{font-weight:700}.tuplet-mark{font-size:11px}
+
+
+/* v2.11 - compact voice/accidental controls + contextual help */
+.palette-section-head{display:flex;align-items:end;justify-content:space-between;gap:8px;margin-top:15px;margin-bottom:6px}
+.palette-section-head .palette-label{margin:0;min-width:0}
+.palette-help-btn{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;gap:4px;min-height:24px;border:1px solid #cbd2df;border-radius:999px;background:#fff;color:#5d6474;padding:3px 7px;font-size:9px;font-weight:800;line-height:1;cursor:pointer}
+.palette-help-btn:hover,.palette-help-btn.active{border-color:#7569ff;background:#f1efff;color:#5649e7}
+.voice-segmented{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.voice-segmented button{min-width:0;white-space:nowrap;padding:8px 5px;font-size:10px;font-weight:800;line-height:1.1}
+.accidental-segmented{grid-template-columns:minmax(70px,1.4fr) repeat(3,minmax(34px,.7fr))!important}
+.accidental-segmented button{min-width:0;white-space:nowrap;padding:8px 4px;font-size:12px;font-weight:800;line-height:1}
+.accidental-segmented button:first-child{font-size:10px}
+.palette-inline-help{margin:7px 0 2px;padding:9px 10px;border:1px solid #d7d5f4;border-radius:9px;background:#f7f6ff;color:#3e3b5d;font-size:9.5px;line-height:1.45;box-shadow:0 4px 12px #4a427a0b}
+.palette-inline-help b{display:block;margin-bottom:4px;color:#332b70;font-size:10px}
+.palette-inline-help p{margin:4px 0;color:#5d6072}
+.palette-inline-help strong{color:#34304d}
+@media(max-width:1450px){.voice-segmented button{font-size:9.5px}.palette-help-btn span{display:none}.palette-help-btn{width:24px;padding:0}.accidental-segmented{grid-template-columns:minmax(60px,1.35fr) repeat(3,minmax(30px,.7fr))!important}}
+@media(max-width:980px){.palette-section-head{margin-top:8px}.palette-help-btn span{display:inline}.palette-help-btn{width:auto;padding:3px 7px}}
+
+/* v2.12 - engraving spacing, accidental alignment and inspector cleanup */
+.studio-editor-shell .score-svg .key-signature{
+  font-family:"Segoe UI Symbol","Noto Music","Bravura Text","Times New Roman",serif;
+  font-size:23px;
+  font-weight:400;
+  fill:#111;
+}
+.studio-editor-shell .score-svg .acc{
+  font-family:"Segoe UI Symbol","Noto Music","Bravura Text","Times New Roman",serif;
+  font-size:19px;
+  font-weight:400;
+  fill:#111;
+}
+.studio-editor-shell .score-svg .note-name{
+  font-size:8.5px;
+  letter-spacing:.01em;
+}
+.studio-editor-shell .score-svg .note-head{shape-rendering:geometricPrecision}
+.studio-editor-shell .score-svg .staff-line{stroke-width:1.08}
+.studio-editor-shell .score-svg .bar-line{stroke-width:1.15}
+
+.studio-inspector{overflow-y:auto;overflow-x:hidden}
+.arrangement-tools{min-width:0;align-items:stretch}
+.arrangement-tools>button,.arrangement-tools>select,.arrangement-tools>.chord-entry{width:100%;min-width:0;max-width:100%}
+.arrangement-tools button,.arrangement-tools select,.chord-entry input{width:100%;min-width:0;max-width:100%}
+.arrangement-tools>button,.arrangement-tools>select{text-align:left;font-weight:650}
+.chord-entry{grid-template-columns:minmax(0,1fr);width:100%}
+.chord-entry button{text-align:center}
+.arrangement-tools small{display:block;width:100%;overflow-wrap:anywhere}
+
+.lyrics-tool{gap:5px}
+.lyrics-tool button{min-height:30px;padding:6px 8px;font-size:10.5px;font-weight:600;line-height:1.2;text-align:center}
+.lyrics-tool textarea{font-size:11px;line-height:1.35}
+
+.palette-section-head{align-items:center}
+.voice-segmented,.accidental-segmented{width:100%;min-width:0}
+.voice-segmented button{min-height:34px;padding:7px 4px;display:flex;align-items:center;justify-content:center}
+.accidental-segmented button{min-height:34px;display:flex;align-items:center;justify-content:center}
+
+@media(max-width:1450px){
+  .studio-palette{padding-left:14px;padding-right:14px}
+  .voice-segmented button{font-size:9px}
+  .lyrics-tool button{font-size:10px}
+}
+
+/* v2.13 - piano input staff selector + clearer key signatures */
+.staff-input-segmented{grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%;min-width:0}
+.staff-input-segmented button{min-width:0;min-height:34px;padding:7px 4px;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;white-space:nowrap}
+.grand-input-head{margin-top:12px}
+.studio-editor-shell .score-svg .key-signature{font-size:28px;font-weight:400}
+.studio-editor-shell .score-svg .key-signature.key-flat{font-size:29px}
+.studio-editor-shell .score-svg .acc.acc-flat{font-size:21px}
+@media(max-width:1450px){.staff-input-segmented button{font-size:9px}}
+
+/* v2.14 pitch correction / measure controls */
+.selected-pitch-readout{font-size:12px;line-height:1.35;padding:7px 8px;border:1px solid var(--line,#d6dbe4);border-radius:8px;background:rgba(91,85,255,.05);margin:7px 0}.accidental-fix-actions{grid-template-columns:minmax(0,1fr) repeat(3,34px)!important}.accidental-fix-actions button{min-width:0;padding:6px 5px}.quick-edit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.passage-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.passage-actions .danger-clean{border-color:#efb1b1;color:#a51d1d;background:#fff7f7}
+
+
+/* v2.15 - reliable live audition + compact button labels */
+.studio-palette button,.editor-transport button,.selected-note-actions button{min-width:0;max-width:100%}
+.duration-grid .duration-btn{padding:7px 4px;min-width:0;overflow:hidden}
+.duration-grid .duration-btn span{display:block;max-width:100%;font-size:10px;line-height:1.08;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.duration-grid .duration-btn b{line-height:1}
+.voice-segmented button,.accidental-segmented button,.staff-input-segmented button{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.quick-edit-grid button{min-width:0;padding:7px 5px;font-size:10px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.selected-note-actions button{padding:6px 7px;font-size:10px;white-space:nowrap}
+.editor-transport #editorMidiWrite{white-space:nowrap;min-width:105px}
+@media(max-width:1450px){.duration-grid .duration-btn span{font-size:9px}.quick-edit-grid button{font-size:9px}.editor-transport #editorMidiWrite{min-width:92px;padding-left:7px;padding-right:7px}}
