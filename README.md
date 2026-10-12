@@ -309,3 +309,14 @@ Fixes the cramped Voice layer control in the left notation palette, gives Voice 
 - Write Notes unlocks Web Audio and warms the selected instrument automatically.
 - Short-key note-on/note-off race fixed in the browser audio engine.
 - Long notation button labels use compact musical abbreviations and full tooltip/help text.
+
+
+## v2.16 - Remix Studio
+
+- Media Studio is upgraded into a **Remix + Media Studio** for user-owned audio.
+- Upload MP3/WAV, keep it as the original layer, and combine it with the editable Music 63 score.
+- Arrangement styles: Ballad, Pop pulse, Acoustic, Waltz feel and Orchestral pad.
+- Generate one or two editable backing-instrument parts from detected chord symbols (Piano, Accordion, Guitar or Violin).
+- Separate original-recording and written-instrument mix levels, plus source start offset.
+- Preview the rebuilt score, open it in Music Editor for note-by-note changes, then export a combined WAV remix.
+- The original uploaded file is never overwritten; protected YouTube/Spotify streams remain reference/capture sources only.
