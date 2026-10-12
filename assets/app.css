@@ -246,3 +246,13 @@
 .selected-note-actions button{padding:6px 7px;font-size:10px;white-space:nowrap}
 .editor-transport #editorMidiWrite{white-space:nowrap;min-width:105px}
 @media(max-width:1450px){.duration-grid .duration-btn span{font-size:9px}.quick-edit-grid button{font-size:9px}.editor-transport #editorMidiWrite{min-width:92px;padding-left:7px;padding-right:7px}}
+
+
+/* v2.16 - Remix Studio */
+.remix-card{border-color:#c9d8e7;background:linear-gradient(180deg,#fbfdff,#f6f9fc)}
+.remix-card h3{margin-bottom:4px}.remix-levels{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.remix-levels input[type=range]{width:100%;accent-color:#5a7fe8}.remix-card .source-flow{display:flex;flex-wrap:wrap;gap:6px}.remix-card .source-flow span{background:#eef4fb;border:1px solid #d2deeb;border-radius:999px;padding:6px 9px;font-size:11px;color:#435a73}.media-studio-audio,.media-studio-player{width:100%;max-height:280px;margin-top:8px}
+@media(max-width:760px){.media-studio .grid.cols2,.remix-levels{grid-template-columns:1fr!important}.media-studio .grid.cols3{grid-template-columns:1fr!important}.media-studio-hero h3{font-size:24px}.remix-card .toolbar{display:grid;grid-template-columns:1fr}.remix-card .toolbar .btn{width:100%}}
+
+/* v2.17 - resilient settings + mobile overflow guard */
+.settings-grid{align-items:start}.settings-card{min-width:0}.settings-grid .card{min-width:0}
+@media(max-width:980px){html,body{max-width:100%;overflow-x:hidden}.main,.content{min-width:0;max-width:100%}.content{width:100%}.card{min-width:0}.toolbar{max-width:100%}.topbar{gap:8px}.topbar .toolbar{justify-content:flex-end}.score-card,.score-host{max-width:100%}}
