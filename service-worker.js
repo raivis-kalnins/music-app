@@ -1,4 +1,4 @@
-const C='music63-v220',A=['./','index.php','assets/app.css?v=40','assets/app.js?v=40','assets/notation.js?v=40','assets/midi.js?v=40','assets/audio.js?v=40','assets/musicxml.js?v=40','assets/audio-transcribe.js?v=40','assets/i18n.js?v=40','assets/handwriting-local.js?v=40','assets/icon.svg','assets/icon-192.png','assets/icon-512.png','assets/apple-touch-icon.png','manifest.webmanifest'];
+const C='music63-v220-hcaptcha1',A=['./','index.php','assets/app.css?v=41','assets/app.js?v=41','assets/notation.js?v=41','assets/midi.js?v=41','assets/audio.js?v=41','assets/musicxml.js?v=41','assets/audio-transcribe.js?v=41','assets/i18n.js?v=41','assets/handwriting-local.js?v=41','assets/icon.svg','assets/icon-192.png','assets/icon-512.png','assets/apple-touch-icon.png','manifest.webmanifest'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(C).then(c=>c.addAll(A)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(Promise.all([self.clients.claim(),caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==C).map(k=>caches.delete(k))))])));
 self.addEventListener('fetch',e=>{

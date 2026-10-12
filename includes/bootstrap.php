@@ -3,6 +3,52 @@ declare(strict_types=1);
 $config=require __DIR__.'/../config.php';
 define('MUSIC63_ROOT',dirname(__DIR__)); define('MUSIC63_STORAGE',$config['storage_dir']);
 function ai_secret_path(){return MUSIC63_STORAGE.'/private/openai.json';}
+function hcaptcha_secret_path(){return MUSIC63_STORAGE.'/private/hcaptcha.json';}
+function hcaptcha_secret_read(){
+  $p=hcaptcha_secret_path(); if(!is_file($p))return [];
+  $raw=@file_get_contents($p); $d=json_decode((string)$raw,true);
+  return is_array($d)?$d:[];
+}
+function hcaptcha_secret_write(array $d){
+  @mkdir(MUSIC63_STORAGE.'/private',0770,true);
+  $deny="<IfModule mod_authz_core.c>\n  Require all denied\n</IfModule>\n<IfModule !mod_authz_core.c>\n  Order allow,deny\n  Deny from all\n</IfModule>\n";
+  $ht=MUSIC63_STORAGE.'/private/.htaccess'; if(!is_file($ht))@file_put_contents($ht,$deny,LOCK_EX);
+  $p=hcaptcha_secret_path(); $tmp=$p.'.tmp.'.bin2hex(random_bytes(4));
+  $raw=json_encode($d,JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
+  if(file_put_contents($tmp,$raw,LOCK_EX)===false)throw new RuntimeException('Unable to save hCaptcha settings.');
+  @chmod($tmp,0600); if(!@rename($tmp,$p)){@unlink($tmp);throw new RuntimeException('Unable to replace hCaptcha settings.');} @chmod($p,0600);
+}
+function hcaptcha_masked_secret(){
+  $k=(string)(hcaptcha_secret_read()['secret']??''); if($k==='')return '';
+  $n=strlen($k); if($n<=8)return str_repeat('•',max(4,$n));
+  return substr($k,0,3).str_repeat('•',min(18,$n-7)).substr($k,-4);
+}
+function hcaptcha_public_settings(){
+  $st=jr('settings.json',[]);
+  return ['enabled'=>!empty($st['hcaptchaEnabled']),'siteKey'=>(string)($st['hcaptchaSiteKey']??'')];
+}
+function hcaptcha_verify(string $token):array{
+  $pub=hcaptcha_public_settings(); if(empty($pub['enabled']))return ['ok'=>true];
+  $secret=(string)(hcaptcha_secret_read()['secret']??'');
+  if($secret===''||$pub['siteKey']==='')return ['ok'=>false,'error'=>'hCaptcha is enabled but not fully configured. Contact the administrator.'];
+  if(trim($token)==='')return ['ok'=>false,'error'=>'Please complete the hCaptcha check.'];
+  $fields=['secret'=>$secret,'response'=>$token];
+  $ip=clean($_SERVER['REMOTE_ADDR']??'',80); if($ip!=='')$fields['remoteip']=$ip;
+  $payload=http_build_query($fields,'','&'); $raw=false; $err=''; $code=0;
+  if(function_exists('curl_init')){
+    $ch=curl_init('https://api.hcaptcha.com/siteverify');
+    curl_setopt_array($ch,[CURLOPT_POST=>true,CURLOPT_RETURNTRANSFER=>true,CURLOPT_CONNECTTIMEOUT=>10,CURLOPT_TIMEOUT=>20,CURLOPT_HTTPHEADER=>['Content-Type: application/x-www-form-urlencoded'],CURLOPT_POSTFIELDS=>$payload]);
+    $raw=curl_exec($ch); $err=$raw===false?curl_error($ch):''; $code=(int)curl_getinfo($ch,CURLINFO_HTTP_CODE); curl_close($ch);
+  }else{
+    $ctx=stream_context_create(['http'=>['method'=>'POST','timeout'=>20,'ignore_errors'=>true,'header'=>"Content-Type: application/x-www-form-urlencoded\r\n",'content'=>$payload]]);
+    $raw=@file_get_contents('https://api.hcaptcha.com/siteverify',false,$ctx);
+    foreach(($http_response_header??[]) as $h)if(preg_match('/^HTTP\/\S+\s+(\d+)/',$h,$m))$code=(int)$m[1];
+  }
+  if($raw===false||$code<200||$code>=300)return ['ok'=>false,'error'=>'hCaptcha verification service is unavailable. Please try again.'];
+  $d=json_decode((string)$raw,true);
+  if(!is_array($d)||empty($d['success']))return ['ok'=>false,'error'=>'hCaptcha verification failed. Please try again.'];
+  return ['ok'=>true];
+}
 function ai_secret_read(){
   $p=ai_secret_path(); if(!is_file($p))return [];
   $raw=@file_get_contents($p); $d=json_decode((string)$raw,true);
@@ -59,7 +105,7 @@ function openai_error_message(array $r){
   if(!empty($r['error']))return clean((string)$r['error'],500);
   return 'OpenAI request failed (HTTP '.(int)($r['code']??0).').';
 }
-function headers_secure(){header('X-Content-Type-Options: nosniff');header('X-Frame-Options: DENY');header('Referrer-Policy: strict-origin-when-cross-origin');header("Permissions-Policy: camera=(), geolocation=(), microphone=(), payment=(), usb=(), midi=(self)");header("Content-Security-Policy: default-src 'self'; img-src 'self' data: blob: https:; media-src 'self' blob: https:; style-src 'self' 'unsafe-inline'; script-src 'self' https://cdn.jsdelivr.net; connect-src 'self' https://cdn.jsdelivr.net; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://open.spotify.com; object-src 'none'; frame-ancestors 'none'; form-action 'self'");}
+function headers_secure(){header('X-Content-Type-Options: nosniff');header('X-Frame-Options: DENY');header('Referrer-Policy: strict-origin-when-cross-origin');header("Permissions-Policy: camera=(), geolocation=(), microphone=(), payment=(), usb=(), midi=(self)");header("Content-Security-Policy: default-src 'self'; img-src 'self' data: blob: https:; media-src 'self' blob: https:; style-src 'self' 'unsafe-inline'; script-src 'self' https://cdn.jsdelivr.net https://js.hcaptcha.com https://hcaptcha.com https://*.hcaptcha.com; connect-src 'self' https://cdn.jsdelivr.net https://hcaptcha.com https://*.hcaptcha.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://open.spotify.com https://hcaptcha.com https://*.hcaptcha.com; object-src 'none'; frame-ancestors 'none'; form-action 'self'");}
 function session_secure(){if(session_status()===PHP_SESSION_ACTIVE)return;$secure=!empty($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=='off';session_name((string)cfg('session_name'));session_set_cookie_params(['lifetime'=>0,'path'=>'/','secure'=>$secure,'httponly'=>true,'samesite'=>'Strict']);session_start();}
 function sf($n){return MUSIC63_STORAGE.'/'.basename($n);} 
 function jr($n,$fallback=[]){$p=sf($n);if(!is_file($p))return $fallback;$raw=@file_get_contents($p);$d=json_decode((string)$raw,true);return is_array($d)?$d:$fallback;}
