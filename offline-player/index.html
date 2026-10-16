@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="lv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#edf4fa">
+<meta name="description" content="Music 63 Offline Player — MIDI klavieru un MIDI/WAV/MP3 atskaņotājs bez interneta.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Music63 Player">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+<title>Music 63 · Offline Player</title>
+</head>
+<body>
+<div class="app">
+<header class="header">
+  <div class="brand"><img src="icon-192.png" width="46" height="46" alt=""/><div><strong>Music 63</strong><span>Offline Player</span></div></div>
+  <div class="header-actions"><span id="networkState" class="status-pill">Pārbauda…</span><button type="button" id="themeSwitch" class="secondary mini" aria-label="Pārslēgt tēmu">Tumšais režīms</button></div>
+</header>
+<main>
+<section class="hero">
+<div><div class="eyebrow">VIENKĀRŠS ATSKAŅOTĀJS</div><h1>Spēlē un atskaņo arī bez interneta.</h1><p>USB MIDI klavieres, klarnetes un citu instrumentu tembri, kā arī sagatavoti MIDI, WAV un MP3 faili — bez papildus konta.</p></div>
+<button id="installButton" class="primary">Instalēt ierīcē</button>
+</section>
+<div class="notice" id="compatibility">Pārbauda ierīces MIDI iespējas…</div>
+<div class="columns">
+<section class="panel"><h2><span class="step">1</span> MIDI klavieres</h2><p class="sub">Datora/Android Chrome vai Edge pārlūkā: USB MIDI. iPad: ekrāna klaviatūra un failu atskaņošana.</p>
+<div class="form-grid"><div class="field"><label for="instrument">Instruments</label><select id="instrument"><option value="piano">Akustiskās klavieres</option><option value="clarinet">Klarnete</option><option value="accordion">Akordeons</option><option value="guitar">Ģitāra</option><option value="violin">Vijole</option><option value="alto_sax">Altsaksofons</option><option value="tenor_sax">Tenorsaksofons</option></select></div><div class="field"><label for="volume">Skaļums</label><input id="volume" type="range" min="0" max="100" value="72"><span id="volumeLabel" class="hint">72%</span></div></div>
+<div class="actions"><button id="activateAudio" class="primary">Ieslēgt skaņu</button><button id="connectMidi" class="secondary">Pieslēgt MIDI</button><button id="panic" class="secondary">Apturēt visas notis</button></div>
+<div class="detail" id="midiStatus">MIDI nav pievienots.</div>
+<div class="keyboard-wrap"><div class="keyboard-label">Ekrāna klavieres · C3–B4</div><div id="keyboard" class="keyboard" aria-label="Ekrāna MIDI klavieres"></div></div>
+</section>
+<section class="panel"><h2><span class="step">2</span> Failu atskaņotājs</h2><p class="sub">Atver savus Music 63 vai Ableton eksportētos ierakstus. Faili paliek Tavā ierīcē — uz serveri netiek sūtīti.</p>
+<label class="file-chooser" for="trackFile"><span class="file-ico">♪</span><strong>Izvēlēties MIDI, WAV vai MP3</strong><small>.mid · .midi · .wav · .mp3 · .m4a · .ogg</small><input id="trackFile" type="file" accept=".mid,.midi,.wav,.mp3,.m4a,.ogg,audio/midi,audio/*"></label>
+<div class="file-meta"><b id="trackName">Fails nav izvēlēts</b><span id="trackDetails">MIDI 0/1 formāti vai ieraksts audio formātā</span></div>
+<div class="actions"><button class="primary" id="play" disabled>Atskaņot</button><button class="secondary" id="pause" disabled>Pauze</button><button class="secondary" id="stop" disabled>Apturēt</button></div>
+<div class="progress"><progress id="progress" max="100" value="0"></progress><span id="position">00:00 / 00:00</span></div>
+<audio id="audioFilePlayer" controls preload="none" hidden></audio>
+</section>
+</div>
+<section class="panel piano-samples-panel" id="pianoSamplesPanel">
+<h2><span class="step">3</span> Labāka klavieru skaņa · FreePats</h2>
+<p class="sub">Aizvieto vienkāršās klavieru skaņas ar FreePats <b>Kawai Upright Piano</b> (stereo WAV). Tā ir pianīna skaņa, nevis koncertflīģelis. Bezmaksas CC0 licence.</p>
+<div class="piano-links"><a href="https://freepats.zenvoid.org/Piano/UprightPianoKW/UprightPianoKW-small-SFZ-20190703.7z" rel="noopener" target="_blank">⬇ Mazā SFZ/WAV banka · 4,3 MiB</a><a href="https://freepats.zenvoid.org/Piano/UprightPianoKW/UprightPianoKW-SFZ-20220221.7z" rel="noopener" target="_blank">⬇ Pilnā SFZ/WAV banka · 69 MiB</a></div>
+<p class="sub">Ar interneta pieslēgumu lejupielādē banku un atarhivē <code>.7z</code> failu. Pēc tam izvēlies visu mapi kopā ar <code>.sfz</code> un <code>samples/*.wav</code>. Pēc importēšanas spēlē arī bez interneta.</p>
+<div class="piano-import-grid"><label class="file-chooser" for="pianoFolder"><strong>Importēt atarhivēto mapi</strong><small>SFZ + WAV mapē</small><input type="file" id="pianoFolder" webkitdirectory directory multiple></label>
+<label class="file-chooser" for="pianoFiles"><strong>Vai izvēlēties atsevišķus failus</strong><small>.sfz + .wav (visi faili vienā atlasē)</small><input type="file" id="pianoFiles" accept=".sfz,.wav,.wave" multiple></label></div>
+<div id="pianoBankState" class="detail" aria-live="polite">Pašlaik tiek izmantotas iebūvētās klavieru skaņas.</div>
+<div class="actions"><button class="secondary" type="button" id="clearPianoBank">Atjaunot iebūvēto tembru</button></div>
+<p class="sub">Neviens skaņas fails netiek nosūtīts uz serveri. PWA versijā paraugi var tikt saglabāti šīs ierīces pārlūka krātuvē; portatīvajā HTML versijā faili pēc atkārtotas atvēršanas var būt jāimportē no jauna.</p>
+</section>
+<section class="panel install-help"><h2>Instalēšana pa ierīcēm</h2><div class="help-grid">
+<div><b>Windows 11</b><p>Atver šo lapu Edge vai Chrome un izvēlies <b>Install app</b>. Nav jāpalaiž neparakstīts EXE.</p></div>
+<div><b>Mac</b><p>Chrome → Install app. MIDI tastatūrai izmanto Chrome vai Edge, nevis Safari.</p></div>
+<div><b>Android</b><p>Chrome → izvēlne ⋮ → <b>Install app</b>. USB MIDI atbalsts atkarīgs no tālruņa, pārlūka un OTG.</p></div>
+<div><b>Apple iPad</b><p>Safari → Share → <b>Add to Home Screen</b>. MIDI failu atskaņošana strādā, bet USB MIDI klavieres Safari neatbalsta.</p></div>
+</div><p class="sub">Pirmajā reizē atver lapu ar internetu, sagaidi norādi par saglabāšanu bezsaistē un pēc tam pārbaudi lidmašīnas režīmā. Skaņai nepieciešams pieskāriens pogai “Ieslēgt skaņu”.</p></section>
+<footer>Music 63 Offline Player · Ierīces dati paliek lokāli · <a href="../">Atvērt Music 63 Studio</a></footer>
+</main>
+</div>
+<script src="piano-sfz.js"></script>
+<script src="midi-parser.js"></script>
+<script src="soundbank.js"></script>
+<script src="player.js"></script>
+</body>
+</html>

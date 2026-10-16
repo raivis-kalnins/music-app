@@ -1,0 +1,5 @@
+/* Offline player has its own narrow SW scope. No API, login or user data is cached. */
+const NAME='music63-offline-player-v225',FILES=['./','index.html','style.css','player.js','midi-parser.js','piano-sfz.js','soundbank.js','manifest.webmanifest','icon-192.png','icon-512.png','Music63-Demo-Folk.mid'];
+self.addEventListener('install',event=>{event.waitUntil(caches.open(NAME).then(cache=>cache.addAll(FILES)).then(()=>self.skipWaiting()))});
+self.addEventListener('activate',event=>{event.waitUntil(Promise.all([self.clients.claim(),caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('music63-offline-player-')&&key!==NAME).map(key=>caches.delete(key))))]))});
+self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;const u=new URL(event.request.url);if(u.origin!==self.location.origin||!u.pathname.startsWith(new URL(self.registration.scope).pathname))return;event.respondWith(caches.match(event.request,{ignoreSearch:true}).then(cached=>cached||fetch(event.request)))})

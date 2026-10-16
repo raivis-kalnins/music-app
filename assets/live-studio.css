@@ -1,0 +1,76 @@
+/* Music 63 v2.25 - accessible, studio-first arranger layout.
+   All layout rules are scoped so the Recording Studio and other pages are unaffected. */
+.live-studio{
+  --ls-accent:var(--ui-primary,#297f5d);--ls-soft:var(--ui-note,#eef5fa);
+  width:100%;max-width:1450px;margin:0 auto;color:var(--ink,#193047);
+  font-size:14px;line-height:1.55;
+}
+.live-studio *{min-width:0}
+.live-studio .live-intro{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  padding:22px 26px;margin-bottom:22px;border:1px solid var(--line,#dce5ec);
+  border-radius:16px;background:linear-gradient(115deg,var(--ui-hero-a,#effbf6),var(--ui-hero-b,#f5f8ff));
+}
+.live-studio h2{font-size:clamp(22px,2vw,27px);line-height:1.25;margin:6px 0 7px;letter-spacing:-.025em;color:var(--ink)}
+.live-studio .live-intro p{max-width:710px;margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+.live-studio h3{font-size:17px;font-weight:700;margin:0 0 12px;line-height:1.35;color:var(--ink)}
+.live-studio .live-intro .live-status{flex:0 1 auto}
+.live-studio-cols{display:grid;grid-template-columns:minmax(0,1.42fr) minmax(335px,.88fr);gap:20px;align-items:start}
+.live-studio .live-main,.live-studio .live-side{min-width:0;display:flex;flex-direction:column;gap:20px}
+.live-studio .card{margin:0;min-width:0;padding:24px;border-radius:16px}
+.live-studio .toolbar{gap:10px;align-items:center}
+.live-studio .toolbar h3{margin-bottom:0}
+.live-studio .card>.toolbar:first-child{margin-bottom:18px}
+.live-studio .field{display:flex;flex-direction:column;gap:7px;margin:0;width:100%}
+.live-studio .field>span{display:block;font-size:13px;line-height:1.4;font-weight:650;color:var(--ink)}
+.live-form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 14px;margin:16px 0 20px}
+.live-studio .input,.live-studio .select,.live-studio .textarea{
+  box-sizing:border-box;width:100%;max-width:100%;min-height:44px;padding:10px 12px;
+  font-size:14px;font-weight:450;border-radius:10px;line-height:1.4;
+  background:var(--ui-input);color:var(--ink);border:1px solid var(--ui-border);
+}
+.live-studio .textarea{min-height:85px;resize:vertical}
+.live-studio .check{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;font-weight:500;line-height:1.5;margin:15px 0;padding:12px 13px}
+.live-studio .check input{flex:0 0 17px;width:17px;height:17px;margin:2px 0 0}
+.live-studio .btn{min-height:41px;padding:9px 13px;font-size:13px;font-weight:620;line-height:1.4;white-space:normal;overflow-wrap:anywhere}
+.live-studio .btn.small{min-height:37px;padding:7px 11px;font-size:13px}
+.live-actions{display:flex!important;align-items:center;flex-wrap:wrap;gap:9px!important;margin:15px 0 0!important}
+.live-actions>.btn{flex:0 1 auto}
+.live-chord{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:14px 0 0;padding:14px 18px;border-radius:12px;background:var(--ls-soft)}
+.live-chord>div{display:grid;gap:3px}
+.live-chord small,.live-chord span{font-size:12px;color:var(--muted)}
+.live-chord strong{font-size:26px;line-height:1.1;font-weight:700;color:var(--ink)}
+.live-chord-symbol{font-size:24px;color:var(--ls-accent)}
+.live-variations{padding-top:18px;margin-top:18px;border-top:1px solid var(--line)}
+.live-variations>strong{display:block;font-size:13.5px;margin-bottom:10px}
+.live-variation-buttons{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.live-variation-buttons .live-var{min-width:42px}
+.live-variation-buttons .active{background:var(--ls-accent);border-color:var(--ls-accent);color:var(--ui-primary-ink,#fff)}
+.live-studio .live-side .field{margin:14px 0}
+.live-studio .live-side .card>p{margin:8px 0 14px;line-height:1.65;font-size:13.5px;color:var(--muted)}
+.live-studio .live-side input[type=range]{width:100%;max-width:100%;min-height:20px;accent-color:var(--ls-accent)}
+.live-studio .notice{font-size:12.5px;line-height:1.5;padding:12px 14px}
+.live-studio .sep{margin:20px 0}
+.live-studio .smalltext{font-size:12.5px;line-height:1.55}
+.live-studio .live-status{display:inline-flex;align-items:center;max-width:100%;overflow-wrap:anywhere;padding:9px 13px;border:1px solid var(--line);background:var(--ls-soft);border-radius:100px;font-size:12.5px;font-weight:650;color:var(--ink)}
+.live-studio .live-status[data-error=yes]{color:var(--danger)}
+.live-studio .pill{padding:6px 9px}
+.live-takes{display:grid;gap:10px;margin-top:15px}
+.studio-take{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;padding:12px;border:1px solid var(--line);border-radius:11px}
+.studio-take strong{overflow-wrap:anywhere;font-size:13px}
+.studio-take audio{width:100%;height:36px}
+.studio-take-actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+.live-studio .live-piano-bank{background:var(--ui-card)}
+.live-studio .live-piano-bank .piano-download-row{display:flex;flex-wrap:wrap;gap:9px;margin:13px 0}
+.live-studio .piano-source-link{font-weight:650;color:var(--ui-primary);font-size:13px;line-height:1.45}
+.live-studio .piano-source-link:hover{text-decoration:underline}
+.live-studio .piano-bank-status{padding:11px 13px;margin:12px 0;background:var(--ls-soft);border-radius:9px;font-size:13px;line-height:1.45;overflow-wrap:anywhere}
+.live-studio .live-piano-bank .piano-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.live-studio .live-piano-bank .piano-actions .btn{flex:1 1 165px}
+.live-studio .live-piano-bank .piano-bank-help{font-size:12.5px;color:var(--muted);line-height:1.55}
+.live-studio .live-piano-bank input[type=file]{width:100%;min-width:0;margin-top:6px;font-size:13px;color:var(--ink)}
+.live-studio .live-piano-bank input[type=file]::file-selector-button{background:var(--ui-action);color:var(--ui-action-ink);border:1px solid var(--line);border-radius:8px;padding:8px 11px;margin-right:9px;cursor:pointer;font:inherit}
+@media(max-width:1330px){.live-form{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:1070px){.live-studio-cols{grid-template-columns:1fr}.live-studio .live-side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.live-studio .live-piano-bank{grid-column:1/-1}}
+@media(max-width:740px){.live-studio .live-side{display:flex}.live-studio .card{padding:17px}.live-studio .live-intro{padding:17px 18px;margin-bottom:14px}.live-studio .live-main,.live-studio .live-side{gap:14px}.live-studio-cols{gap:14px}.live-form{gap:12px}.live-studio .live-actions{gap:8px}.live-studio h3{font-size:16px}}
+@media(max-width:430px){.live-form{grid-template-columns:1fr}.live-studio .live-intro{padding:16px}.live-studio .card{padding:14px}.live-actions>.btn{flex:1 1 155px}.live-variation-buttons .btn{flex:1 1 40px}}
