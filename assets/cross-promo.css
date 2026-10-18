@@ -1,0 +1,75 @@
+/* DigitalPulse cross-promotion: visually separate, mobile-friendly and isolated from studio controls. */
+.dp-promo-zone,.dp-promo-zone *{box-sizing:border-box}
+.dp-promo-zone {
+  --dp-footer-text:#eaf1ff;
+  --dp-footer-muted:#aebfd9;
+  --dp-footer-chip:rgba(255,255,255,.055);
+  --dp-footer-border:rgba(179,203,248,.17);
+  width:100%;
+  color:var(--dp-footer-text);
+  background:linear-gradient(180deg,#091522 0%,#07101e 100%);
+  padding:clamp(30px,4.5vw,64px) clamp(16px,3vw,36px) 28px;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+.dp-promo-inner {max-width:1320px;margin:0 auto;min-width:0}
+.dp-promo-card {
+  position:relative;
+  isolation:isolate;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:clamp(20px,4vw,56px);
+  padding:clamp(25px,4vw,48px);
+  overflow:hidden;
+  border:1px solid rgba(178,201,255,.28);
+  border-radius:24px;
+  background:linear-gradient(112deg,#202e63 0%,#363d90 44%,#154f70 100%);
+  box-shadow:0 18px 48px rgba(0,0,0,.14);
+  color:#fff;
+}
+.dp-promo-card:after {
+  content:"";
+  position:absolute;
+  width:360px;height:360px;right:-135px;top:-195px;
+  z-index:-1;
+  pointer-events:none;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(89,230,216,.25),transparent 69%);
+}
+.dp-promo-copy{min-width:0;max-width:780px}
+.dp-promo-eyebrow{display:flex;align-items:center;gap:11px;color:#bceeee;letter-spacing:.12em;font-size:11px;line-height:1.4;font-weight:750;text-transform:uppercase}
+.dp-pulse-mark{height:27px;width:27px;flex:none;display:flex;align-items:center;justify-content:center;gap:3px;border:1px solid #a7faeb66;border-radius:9px;background:#a7faeb20}
+.dp-pulse-mark span{width:3px;border-radius:2px;background:#b4ffeb;box-shadow:0 0 7px #4ff3de55}
+.dp-pulse-mark span:nth-child(1){height:8px}.dp-pulse-mark span:nth-child(2){height:15px}.dp-pulse-mark span:nth-child(3){height:10px}
+.dp-promo-card h2{font-size:clamp(23px,2.65vw,35px);font-weight:750;letter-spacing:-.028em;line-height:1.16;margin:15px 0 12px;color:#fff}
+.dp-promo-card p{margin:0;max-width:700px;color:#dbe8ff;font-size:clamp(13px,1.2vw,15px);line-height:1.7;font-weight:400}
+.dp-service-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.dp-service-tags span{display:inline-flex;align-items:center;border:1px solid #d9e7ff3c;background:#ffffff12;border-radius:100px;padding:7px 11px;color:#f4f8ff;font-weight:600;font-size:11px;white-space:nowrap}
+.dp-promo-actions{display:flex;flex-direction:column;align-items:stretch;gap:13px;min-width:210px}
+.dp-promo-button,.dp-promo-secondary{display:inline-flex;align-items:center;justify-content:center;gap:11px;text-decoration:none!important;text-align:center;font-size:13px;font-weight:750;line-height:1.35;border-radius:12px;min-height:48px;padding:12px 18px;transition:transform .18s ease,background .18s ease,box-shadow .18s ease}
+.dp-promo-button{color:#122c3a!important;background:linear-gradient(115deg,#bdfcf0,#d8fff1)!important;border:1px solid #e3fff8;box-shadow:0 8px 25px #050d2830}
+.dp-promo-button:hover{background:#fff!important;box-shadow:0 12px 28px #0e18354d;transform:translateY(-2px)}
+.dp-promo-secondary{color:#f4faff!important;border:1px solid #dbeaff5c;background:#ffffff0d}
+.dp-promo-secondary:hover{background:#ffffff23;transform:translateY(-2px)}
+.dp-network-footer{padding-top:30px}
+.dp-network-heading{display:flex;align-items:center;gap:18px;margin:0 0 15px}
+.dp-network-heading h2{margin:0;white-space:normal;font-size:15px;font-weight:750;letter-spacing:.01em;color:var(--dp-footer-text)}
+.dp-network-rule{height:1px;flex:1;background:var(--dp-footer-border)}
+.dp-app-links{display:flex;flex-wrap:wrap;gap:9px}
+.dp-app-links a{display:inline-flex;align-items:center;gap:9px;min-height:39px;padding:6px 12px 6px 7px;background:var(--dp-footer-chip);border:1px solid var(--dp-footer-border);border-radius:12px;color:var(--dp-footer-text)!important;text-decoration:none!important;font-size:12px;font-weight:600;line-height:1.3;transition:border-color .18s ease,background .18s ease,transform .18s ease}
+.dp-app-links a:hover{border-color:#6dc7ec;background:rgba(98,159,223,.15);transform:translateY(-2px)}
+.dp-app-symbol{display:grid;place-items:center;width:25px;height:25px;flex:none;border-radius:7px;background:rgba(122,170,237,.17);color:#a9eafc;font-size:15px;font-weight:800;line-height:1}
+.dp-app-arrow{font-size:12px;opacity:.55}
+.dp-footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:26px;padding-top:17px;border-top:1px solid var(--dp-footer-border);font-size:12px;line-height:1.6;color:var(--dp-footer-muted)}
+.dp-footer-bottom a{color:var(--dp-footer-text)!important;font-weight:750;text-decoration:none!important}
+.dp-footer-bottom a:hover{text-decoration:underline!important}
+.dp-promo-zone a:focus-visible{outline:3px solid #77f6d9;outline-offset:3px}
+/* The app uses a fixed bottom navigation on small screens: keep its footer accessible. */
+@media(max-width:980px){body:has(.layout) .dp-promo-zone{padding-bottom:106px}}
+@media(max-width:760px){.dp-promo-card{grid-template-columns:minmax(0,1fr);gap:22px;border-radius:19px}.dp-promo-actions{flex-direction:row;flex-wrap:wrap;min-width:0}.dp-promo-button,.dp-promo-secondary{flex:1 1 190px}.dp-app-links{gap:8px}.dp-network-footer{padding-top:25px}}
+@media(max-width:460px){.dp-promo-card{padding:21px}.dp-promo-eyebrow{font-size:10px;letter-spacing:.075em}.dp-service-tags{gap:6px}.dp-service-tags span{font-size:10px;padding:6px 9px}.dp-promo-actions{flex-direction:column}.dp-promo-button,.dp-promo-secondary{flex:0 0 auto;width:100%}.dp-app-links a{font-size:11px;padding-right:9px}.dp-footer-bottom{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.dp-promo-zone a{transition:none!important}.dp-promo-zone a:hover{transform:none!important}}
+@media print{.dp-promo-zone{display:none!important}}
+:root[data-theme="light"] .dp-promo-zone{--dp-footer-text:#263a56;--dp-footer-muted:#61748d;--dp-footer-chip:#ffffffc9;--dp-footer-border:#cbd8eb;background:linear-gradient(180deg,#edf3fa,#f6f8fc)}
+:root[data-theme="light"] .dp-app-symbol{color:#3368a5;background:#dcecf8}
+:root[data-theme="light"] .dp-app-links a:hover{background:#e3eff9}
